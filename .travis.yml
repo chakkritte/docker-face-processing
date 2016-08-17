@@ -1,0 +1,15 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+script:
+  - docker build -t chakkritte/docker-face-processing .
+  - docker run -d chakkritte/docker-face-processing
+  
+  - docker ps -a
+  
+notifications:
+  email: false
