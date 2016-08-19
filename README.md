@@ -16,7 +16,7 @@ Download sample video and {dlib|openface} models
 Launch jupyter notebook
 
     docker run -p 80:8888 -v /opt/pyannote-video/scripts:/scripts \
-                      -v /opt/pyannote-data/data:/data \
+                      -v /opt/pyannote-data:/data \
                       -v /opt/pyannote-video/doc:/notebooks \
                       chakkritte/docker-face-processing
 Now visit http://localhost to run this notebook locally.
