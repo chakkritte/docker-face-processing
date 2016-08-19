@@ -5,20 +5,19 @@ face-processing
 
 Build your own pyannote/video docker image
 
+    cd /opt/
     git clone https://github.com/pyannote/pyannote-video.git
     docker pull chakkritte/docker-face-processing
-    cd pyannote-video
     
 Download sample video and {dlib|openface} models
 
     git clone https://github.com/pyannote/pyannote-data.git
-    mv pyannote-data data
     
 Launch jupyter notebook
 
-    docker run -p 80:8888 -v scripts:/scripts \
-                      -v data:/data \
-                      -v doc:/notebooks \
+    docker run -p 80:8888 -v /opt/pyannote-video/scripts:/scripts \
+                      -v /opt/pyannote-data/data:/data \
+                      -v /opt/pyannote-video/doc:/notebooks \
                       chakkritte/docker-face-processing
 Now visit http://localhost to run this notebook locally.
 
